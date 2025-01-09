@@ -15,16 +15,19 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        // อ้างอิงปุ่ม Back to Main
         backToMainPageBtn = findViewById(R.id.registBackToMainBtn)
 
-        backToMainPageBtn.setOnClickListener() {
-            finish()
+        // ตั้งค่า OnClickListener
+        backToMainPageBtn.setOnClickListener {
+            finish() // ปิด Activity และกลับไปยัง MainActivity
         }
     }
 }
